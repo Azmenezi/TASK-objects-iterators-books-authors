@@ -8,9 +8,9 @@ const books = require("./books.json");
  * - returns the book object that matches that id
  * - returns undefined if no matching book is found
  ****************************************************************/
-function getBookById(bookId, books) {
-  // Your code goes here
-}
+const getBookById = (bookId, books) =>
+  books.filter((book) => bookId == book.id);
+
 // console.log(getBookById(12, books));
 
 /**************************************************************
@@ -20,10 +20,12 @@ function getBookById(bookId, books) {
  * - returns the author that matches that name (CASE INSENSITIVE)
  * - returns undefined if no matching author is found
  ****************************************************************/
-function getAuthorByName(authorName, authors) {
-  // Your code goes here
-}
-// console.log(getAuthorByName("J.K. Rowling", authors));
+const getAuthorByName = (authorName, authors) =>
+  authors.filter(
+    (author) => authorName.toLowerCase() == author.name.toLowerCase()
+  );
+
+// console.log(getAuthorByName("J.K. rowling", authors));
 
 /**************************************************************
  * bookCountsByAuthor(authors):
